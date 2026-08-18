@@ -3592,6 +3592,234 @@
         }
       }
     </style>
+
+    <style>
+      /* Delivery rhythm: full-width table beneath the module grid. */
+      #scope .scope-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+        align-items: start !important;
+      }
+      #scope .scope-grid > div:first-child {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      #scope .delivery-timeline {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-top: 2px !important;
+        padding: 22px !important;
+        border-radius: 24px !important;
+        background: var(--ataam-dark, #0b2f3d) !important;
+        color: #fff !important;
+        overflow: hidden !important;
+      }
+      #scope .delivery-timeline-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 16px;
+      }
+      #scope .delivery-timeline-head h3 {
+        margin: 0 0 5px !important;
+        font-size: 26px !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.035em !important;
+        color: #fff !important;
+      }
+      #scope .delivery-timeline-head p {
+        margin: 0;
+        max-width: 690px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #b9dbff;
+      }
+      #scope .launch-chip {
+        flex: 0 0 auto;
+        min-width: 170px;
+        padding: 10px 13px;
+        border-radius: 14px;
+        border: 1px solid rgba(22, 143, 234, 0.28);
+        background: rgba(22, 143, 234, 0.1);
+      }
+      #scope .launch-chip span,
+      #scope .launch-chip strong {
+        display: block;
+      }
+      #scope .launch-chip span {
+        margin-bottom: 3px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b9dbff;
+      }
+      #scope .launch-chip strong {
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        color: #168fea;
+      }
+      #scope .delivery-table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid rgba(22, 143, 234, 0.2);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.025);
+        -webkit-overflow-scrolling: touch;
+      }
+      #scope .delivery-table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+      #scope .delivery-table th,
+      #scope .delivery-table td {
+        text-align: left;
+        vertical-align: top;
+        border: 0;
+      }
+      #scope .delivery-table thead th {
+        padding: 11px 14px;
+        background: rgba(22, 143, 234, 0.12);
+        border-bottom: 1px solid rgba(22, 143, 234, 0.24);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #8dc9ff;
+      }
+      #scope .delivery-table thead th:nth-child(1) { width: 55%; }
+      #scope .delivery-table thead th:nth-child(2) { width: 22%; }
+      #scope .delivery-table thead th:nth-child(3) { width: 23%; }
+      #scope .delivery-table tbody td {
+        padding: 12px 14px;
+        border-top: 1px solid rgba(22, 143, 234, 0.14);
+        font-size: 12px;
+        line-height: 1.42;
+        color: #d9ebff;
+      }
+      #scope .delivery-table tbody tr:first-child td {
+        border-top: 0;
+      }
+      #scope .delivery-table tbody tr:hover {
+        background: rgba(22, 143, 234, 0.055);
+      }
+      #scope .delivery-table td strong {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 12.5px;
+        line-height: 1.32;
+        color: #fff;
+      }
+      #scope .delivery-table td > span:not(.stage-pill) {
+        display: block;
+        color: #9fc8ed;
+      }
+      #scope .stage-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: rgba(22, 143, 234, 0.12);
+        border: 1px solid rgba(22, 143, 234, 0.2);
+        font-size: 9.5px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #8dc9ff;
+        white-space: nowrap;
+      }
+      #scope .stage-pill.launch {
+        background: #168fea;
+        border-color: #168fea;
+        color: #fff;
+      }
+
+      @media (max-width: 720px) {
+        #scope .scope-grid {
+          gap: 12px !important;
+        }
+        #scope .delivery-timeline {
+          padding: 15px !important;
+          border-radius: 18px !important;
+        }
+        #scope .delivery-timeline-head {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 12px;
+        }
+        #scope .delivery-timeline-head h3 {
+          font-size: 21px !important;
+        }
+        #scope .delivery-timeline-head p {
+          font-size: 12px;
+        }
+        #scope .launch-chip {
+          min-width: 0;
+          width: 100%;
+        }
+        #scope .delivery-table {
+          min-width: 700px;
+        }
+      }
+
+      @media print {
+        #scope .scope-grid {
+          grid-template-columns: 1fr !important;
+          gap: 8px !important;
+        }
+        #scope .delivery-timeline {
+          padding: 10px !important;
+          break-inside: avoid !important;
+        }
+        #scope .delivery-timeline-head {
+          margin-bottom: 6px !important;
+        }
+        #scope .delivery-timeline-head h3 {
+          font-size: 14px !important;
+        }
+        #scope .delivery-timeline-head p {
+          font-size: 8px !important;
+          line-height: 1.25 !important;
+        }
+        #scope .launch-chip {
+          min-width: 115px !important;
+          padding: 5px 7px !important;
+        }
+        #scope .launch-chip span { font-size: 6.5px !important; }
+        #scope .launch-chip strong { font-size: 8px !important; }
+        #scope .delivery-table-wrap {
+          overflow: visible !important;
+        }
+        #scope .delivery-table {
+          min-width: 0 !important;
+          width: 100% !important;
+        }
+        #scope .delivery-table thead th {
+          padding: 4px 6px !important;
+          font-size: 6.3px !important;
+        }
+        #scope .delivery-table tbody td {
+          padding: 4px 6px !important;
+          font-size: 6.8px !important;
+          line-height: 1.2 !important;
+        }
+        #scope .delivery-table td strong {
+          margin-bottom: 1px !important;
+          font-size: 7px !important;
+          line-height: 1.18 !important;
+        }
+        #scope .stage-pill {
+          min-height: 0 !important;
+          padding: 2px 4px !important;
+          font-size: 5.8px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="topbar">
@@ -4059,13 +4287,13 @@
           <div>
             <h2 class="title">
               A focused MVP in 6 weeks.
-              <span>A complete product engagement across 6 months.</span>
+              <span>Official launch targeted for 7 October 2026.</span>
             </h2>
           </div>
           <p class="lead">
-            The first six weeks establish a usable production system. Months 2–6
-            are not “support only”: they cover stabilisation, adoption, measured
-            optimisation, approved improvements and product hardening.
+            Following product specification and approval in late August, delivery
+            moves through staff and admin design, frontend and backend completion,
+            QA, client beta, compliance review, priority fixes and production launch.
           </p>
         </div>
         <div class="scope-grid">
@@ -4129,67 +4357,82 @@
               </div>
             </div>
           </div>
-          <div class="timeline">
-            <h3>Delivery rhythm</h3>
-            <div class="timeline-row">
-              <strong>WEEK 1</strong
-              ><span
-                >Kickoff, workflow mapping, roles, data model, acceptance
-                criteria and initial UI direction.</span
-              >
-            </div>
-            <div class="timeline-row">
-              <strong>WEEK 2</strong
-              ><span
-                >Staff + admin prototype, core design system and technical
-                architecture.</span
-              >
-            </div>
-            <div class="timeline-row">
-              <strong>WEEK 3</strong
-              ><span
-                >Staff workflows, attendance logic, patient records and backend
-                foundation.</span
-              >
-            </div>
-            <div class="timeline-row">
-              <strong>WEEK 4</strong
-              ><span
-                >Admin control center, analytics, email notifications,
-                compliance and audit workflows.</span
-              >
-            </div>
-            <div class="timeline-row">
-              <strong>WEEK 5</strong
-              ><span
-                >Cross-portal QA, client beta, permission/security review and
-                priority fixes.</span
-              >
-            </div>
-            <div class="timeline-row">
-              <strong>WEEK 6</strong
-              ><span
-                >Production deployment, training, launch and transition into
-                optimisation.</span
-              >
-            </div>
-            <div class="post-mvp">
-              <div class="month">
-                <b>MONTH 2</b
-                ><span>Stabilise production + fix real-use issues.</span>
+          <div class="timeline delivery-timeline">
+            <div class="delivery-timeline-head">
+              <div>
+                <h3>Delivery rhythm</h3>
+                <p>
+                  The working delivery schedule below is aligned to Ataam's project
+                  documentation, from specification through launch.
+                </p>
               </div>
-              <div class="month">
-                <b>MONTH 3</b><span>Adoption support + refine workflows.</span>
+              <div class="launch-chip">
+                <span>Target launch</span>
+                <strong>07 OCT 2026</strong>
               </div>
-              <div class="month">
-                <b>MONTH 4</b><span>Approved enhancements + reporting.</span>
-              </div>
-              <div class="month">
-                <b>MONTH 5</b><span>Performance, reliability + hardening.</span>
-              </div>
-              <div class="month">
-                <b>MONTH 6</b><span>Final optimisation, docs + handoff.</span>
-              </div>
+            </div>
+            <div class="delivery-table-wrap">
+              <table class="delivery-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Milestone</th>
+                    <th scope="col">Target date</th>
+                    <th scope="col">Delivery stage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Product specification completed</strong><span>Flows, screens, user acceptance criteria and user stories.</span></td>
+                    <td>24 August 2026</td>
+                    <td><span class="stage-pill">Specification</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Product specification reviewed &amp; approved</strong><span>Approval before design and build move into full delivery.</span></td>
+                    <td>25 August 2026</td>
+                    <td><span class="stage-pill">Approval</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Staff portal UI/UX completed</strong><span>Primary staff experience ready for implementation.</span></td>
+                    <td>1 September 2026</td>
+                    <td><span class="stage-pill">Design</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Admin UI/UX + staff frontend completed</strong><span>Admin experience completed while staff-facing implementation reaches completion.</span></td>
+                    <td>8 September 2026</td>
+                    <td><span class="stage-pill">Design + Frontend</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Backend for both portals + admin frontend completed</strong><span>Core staff/admin backend and admin-facing frontend reach feature-complete status.</span></td>
+                    <td>15 September 2026</td>
+                    <td><span class="stage-pill">Development</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>QA testing loop completed &amp; documented</strong><span>Cross-portal testing, issue capture and release-readiness checks.</span></td>
+                    <td>24 September 2026</td>
+                    <td><span class="stage-pill">QA</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Beta testing with client</strong><span>Client validation of the working staff and admin experiences.</span></td>
+                    <td>25 September 2026</td>
+                    <td><span class="stage-pill">Client Beta</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Compliance review &amp; audit</strong><span>Review ahead of the final feedback and production release window.</span></td>
+                    <td>28 September 2026</td>
+                    <td><span class="stage-pill">Compliance</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Urgent client feedback completed</strong><span>Priority fixes from client testing closed before deployment.</span></td>
+                    <td>4 October 2026</td>
+                    <td><span class="stage-pill">Refinement</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Deploy, host, hand off &amp; official launch</strong><span>Production deployment to Ataam's website, handoff and launch.</span></td>
+                    <td>7 October 2026</td>
+                    <td><span class="stage-pill launch">Launch</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -4471,7 +4714,7 @@
         <div class="team-grid">
           <article class="person">
             <div class="initials">AA</div>
-            <h3>Anjoila Ajayi</h3>
+            <h3>Anjola Ajayi</h3>
             <div class="role">Project Owner &amp; Data Analyst Expert</div>
             <p>
               Owns project accountability, delivery priorities, data
@@ -4489,7 +4732,7 @@
           </article>
           <article class="person">
             <div class="initials">OD</div>
-            <h3>Oki Danial</h3>
+            <h3>Oki Daniel</h3>
             <div class="role">Product &amp; UI/UX Designer</div>
             <p>
               Designs user flows, responsive interfaces, the design system and
