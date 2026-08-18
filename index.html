@@ -4452,6 +4452,145 @@
           bottom: -72px;
         }
       }
+
+
+      /* =========================================================
+         PDF PROPOSAL EXPORT
+         The Download PDF button opens the browser's native print-to-PDF flow.
+         Print styles preserve brand colours and remove web-only UI.
+      ========================================================== */
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 0 0 auto;
+      }
+
+      .pdf-download-btn {
+        background: var(--brand);
+        color: #fff;
+      }
+
+      .pdf-download-btn:hover {
+        background: #ff5820;
+      }
+
+      .pdf-download-btn svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar-actions {
+          gap: 6px;
+        }
+
+        .topbar-actions .pill-btn {
+          padding: 10px 12px;
+          gap: 7px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .topbar-actions .jump-investment {
+          display: none;
+        }
+
+        .pdf-download-btn .pdf-long-label {
+          display: none;
+        }
+
+        .pdf-download-btn::after {
+          content: "PDF";
+        }
+      }
+
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 10mm;
+        }
+
+        html,
+        body {
+          background: #fff !important;
+          overflow: visible !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .topbar,
+        .scroll-progress,
+        .noise {
+          display: none !important;
+        }
+
+        .reveal,
+        .reveal.in {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+
+        .section,
+        .hero,
+        .section-dark,
+        .section-white,
+        .section-orange,
+        .final-cta {
+          overflow: visible !important;
+        }
+
+        .hero {
+          min-height: auto !important;
+          padding-top: 20px !important;
+        }
+
+        .shell {
+          width: 100% !important;
+          max-width: none !important;
+        }
+
+        .experience-tabs {
+          display: none !important;
+        }
+
+        .experience-panel[hidden] {
+          display: block !important;
+        }
+
+        .experience-panel + .experience-panel {
+          margin-top: 24px !important;
+        }
+
+        .case-card,
+        .module,
+        .opp-card,
+        .process-step,
+        .milestone,
+        .term,
+        .investment-card,
+        .investment-logic,
+        .understanding-card,
+        .compliance-item,
+        .impact-model,
+        .urgency-band {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        a,
+        button {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        * {
+          animation: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -4480,17 +4619,34 @@
           <span>Ataam Operations Platform</span>
         </div>
       </div>
-      <button class="pill-btn jump-investment" type="button">
-        Review investment
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        >
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      </button>
+      <div class="topbar-actions">
+        <button class="pill-btn jump-investment" type="button">
+          Review investment
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </button>
+        <button class="pill-btn pdf-download-btn" id="downloadPdfBtn" type="button" title="Download the full proposal as PDF">
+          <span class="pdf-long-label">Download PDF</span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+        </button>
+      </div>
     </header>
 
     <!-- =========================================================
@@ -6524,6 +6680,60 @@
             setTimeout(() => (btn.textContent = original), 1200);
           }),
         );
+
+
+        // Download the complete proposal as a PDF using the browser's native
+        // print-to-PDF engine. This produces sharper text than screenshot-based
+        // PDF libraries and preserves the proposal's print styles.
+        const downloadPdfBtn = document.getElementById("downloadPdfBtn");
+        downloadPdfBtn?.addEventListener("click", async () => {
+          const label = downloadPdfBtn.querySelector(".pdf-long-label");
+          const originalLabel = label?.textContent || "Download PDF";
+          downloadPdfBtn.disabled = true;
+          if (label) label.textContent = "Preparing PDF…";
+
+          try {
+            if (document.fonts?.ready) await document.fonts.ready;
+
+            const images = Array.from(document.images).filter(
+              (img) => !img.complete,
+            );
+            if (images.length) {
+              await Promise.all(
+                images.map(
+                  (img) =>
+                    new Promise((resolve) => {
+                      img.addEventListener("load", resolve, { once: true });
+                      img.addEventListener("error", resolve, { once: true });
+                    }),
+                ),
+              );
+            }
+
+            const previousTitle = document.title;
+            document.title = "Ataam Operations Platform Proposal";
+
+            const restore = () => {
+              document.title = previousTitle;
+              downloadPdfBtn.disabled = false;
+              if (label) label.textContent = originalLabel;
+              window.removeEventListener("afterprint", restore);
+            };
+
+            window.addEventListener("afterprint", restore);
+            window.print();
+
+            // Fallback for browsers that do not reliably fire afterprint.
+            setTimeout(() => {
+              if (downloadPdfBtn.disabled) restore();
+            }, 3000);
+          } catch (error) {
+            console.error("PDF preparation failed:", error);
+            downloadPdfBtn.disabled = false;
+            if (label) label.textContent = originalLabel;
+            alert("We could not prepare the PDF view. Please try again.");
+          }
+        });
       })();
     </script>
   </body>
