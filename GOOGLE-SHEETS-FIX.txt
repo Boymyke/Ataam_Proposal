@@ -1,0 +1,58 @@
+ATAAM PROPOSAL — GOOGLE SHEETS FIX
+
+THE ACTUAL PROBLEM
+------------------
+The previous form used fetch(..., { mode: 'no-cors' }).
+
+A no-cors fetch does not let the page inspect the Apps Script response.
+So the old form could show "sent" even if the deployed script did not write a row.
+
+The fixed form:
+1. Tests the deployed endpoint and its Google Sheet connection.
+2. Sends the approval.
+3. Checks for the exact Submission ID in the Sheet.
+4. Shows SUCCESS only after Google Sheets confirms that row exists.
+
+SETUP
+-----
+1. Open your Google Sheet.
+2. Copy the Sheet ID from:
+   https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
+3. Paste it into SPREADSHEET_ID in Code_fixed.gs.
+4. Save.
+5. Run testSheetConnection() manually in Apps Script.
+6. Complete the Google authorization prompt.
+7. Confirm the execution finishes successfully.
+8. Deploy as a Web app:
+   Execute as: Me
+   Who has access: Anyone
+9. Copy the deployed URL ending in /exec.
+10. Paste it into GOOGLE_SCRIPT_URL in form_fixed.html.
+11. If you edited an existing deployment:
+    Deploy → Manage deployments → Edit → New version → Deploy.
+12. Open the /exec URL in an incognito/private tab.
+    You should get JSON with "ok": true.
+13. Test the form.
+
+DEBUG
+-----
+Apps Script → Executions
+
+NO doPost execution:
+- wrong /exec URL
+- old deployment version
+- web app access is not public
+
+doPost execution FAILED:
+- open it and read the error
+- most often the Spreadsheet ID is wrong or Sheets authorization was not granted
+
+The console messages mentioning:
+contentscript.js
+MaxListenersExceededWarning
+ObjectMultiplex
+app-init-liveness
+background-liveness
+
+come from an injected browser extension/content script. They are separate from
+the Google Sheets form logic.
