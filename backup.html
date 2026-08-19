@@ -4164,6 +4164,75 @@
         #budget .maintenance-card { break-inside: avoid; }
       }
     </style>
+
+    <style id="relevant-work-section">
+      #work.work-closing {
+        background: linear-gradient(145deg, #ffffff, #edf5ff);
+      }
+      #work .section-intro {
+        margin-bottom: 24px;
+      }
+      #work .cred {
+        background: var(--navy2);
+        box-shadow: 0 10px 30px rgba(13, 71, 199, 0.06);
+      }
+      #work .project-link-btn {
+        color: #168fea !important;
+      }
+      #work .project-link-btn:hover {
+        color: #087ed8 !important;
+      }
+      #work .ferrn-contact-card {
+        background: #000 !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+      }
+      #work .ferrn-contact-brand span {
+        color: rgba(255, 255, 255, 0.66) !important;
+      }
+      #work .ferrn-contact-links {
+        flex-wrap: wrap;
+      }
+      #work .website-contact,
+      #work .email-contact {
+        display: block;
+      }
+      #work .website-contact small,
+      #work .website-contact strong,
+      #work .email-contact small,
+      #work .email-contact strong {
+        display: block;
+      }
+      @media print {
+        #work .title {
+          font-size: 28pt !important;
+        }
+        #work .section-intro {
+          margin-bottom: 12px !important;
+        }
+        #work .credentials {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 7px !important;
+        }
+        #work .cred {
+          padding: 11px !important;
+        }
+        #work .cred b {
+          font-size: 12px !important;
+        }
+        #work .cred p {
+          font-size: 9px !important;
+          line-height: 1.3 !important;
+        }
+        #work .project-link-btn {
+          font-size: 9px !important;
+          padding-top: 5px !important;
+        }
+        #work .ferrn-contact-card {
+          margin-top: 9px !important;
+          padding: 9px 11px !important;
+        }
+      }
+    </style>
 </head>
   <body>
     <header class="topbar">
@@ -4924,7 +4993,7 @@
                   border-color: rgba(255, 255, 255, 0.16);
                   color: #fff;
                 "
-                >6-month free post lunch support</span
+                >6-month engagement</span
               ><span
                 class="chip"
                 style="
@@ -4980,25 +5049,25 @@
     <section class="proposal-page team-closing" id="team">
       <div class="shell">
         <div class="page-head section-label-only">
-          <span class="section-no">06 · Team &amp; Credentials</span>
+          <span class="section-no">06 · Team</span>
         </div>
         <div class="section-intro">
           <div>
             <h2 class="title">
-              The people building Ataam, <span>and how to reach us.</span>
+              The people responsible for <span>building Ataam.</span>
             </h2>
           </div>
           <!-- <p class="lead">
             A named delivery team with clear ownership across product, data,
-            design, frontend, backend and quality assurance — backed by relevant
-            application and enterprise delivery work.
+            design, frontend, backend and quality assurance — so Ataam knows
+            exactly who is responsible for each part of the build.
           </p> -->
         </div>
         <div class="team-grid">
           <article class="person">
             <div class="initials">AA</div>
             <h3>Anjola Ajayi</h3>
-            <div class="role">Project Owner &amp; Data Analyst Expert</div>
+            <div class="role">Project Owner &amp; Technical Lead</div>
             <p>
               Owns project accountability, delivery priorities, data
               requirements and analytics alignment across the platform.
@@ -5051,6 +5120,25 @@
               authentication, permissions and reliable server-side integrations.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+    <section class="proposal-page white work-closing" id="work">
+      <div class="shell">
+        <div class="page-head section-label-only">
+          <span class="section-no">07 · Relevant Work</span>
+        </div>
+        <div class="section-intro">
+          <div>
+            <h2 class="title">
+              Work we’ve already <span>delivered.</span>
+            </h2>
+          </div>
+          <p class="lead">
+            Selected product and digital experience work that demonstrates our
+            ability to design and deliver complex platforms, structured workflows
+            and enterprise-facing experiences.
+          </p>
         </div>
         <div class="credentials">
           <div class="cred">

@@ -765,6 +765,32 @@
         line-height: 1.55;
         color: var(--muted);
       }
+      .person-credentials {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+      .person-credentials li {
+        position: relative;
+        padding-left: 15px;
+        font-size: 13px;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+      .person-credentials li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--blue);
+        font-weight: 900;
+      }
+      .person-credentials strong {
+        font-weight: 700;
+        color: var(--ink);
+      }
       .placeholder {
         border-style: dashed;
         background: #f9fbfb;
@@ -2489,6 +2515,7 @@
       #team .person {
         background: #fff;
         box-shadow: 0 10px 30px rgba(13, 71, 199, 0.05);
+        min-height: 0;
       }
       #team .person .initials {
         background: var(--navy2);
@@ -4168,6 +4195,8 @@
     <style id="relevant-work-section">
       #work.work-closing {
         background: linear-gradient(145deg, #ffffff, #edf5ff);
+        min-height: 0;
+        padding-bottom: 24px;
       }
       #work .section-intro {
         margin-bottom: 24px;
@@ -4185,6 +4214,7 @@
       #work .ferrn-contact-card {
         background: #000 !important;
         border-color: rgba(255, 255, 255, 0.12) !important;
+        margin-bottom: 0 !important;
       }
       #work .ferrn-contact-brand span {
         color: rgba(255, 255, 255, 0.66) !important;
@@ -5068,57 +5098,65 @@
             <div class="initials">AA</div>
             <h3>Anjola Ajayi</h3>
             <div class="role">Project Owner &amp; Technical Lead</div>
-            <p>
-              Owns project accountability, delivery priorities, data
-              requirements and analytics alignment across the platform.
-            </p>
+            <ul class="person-credentials">
+              <li><strong>2x Data and AI Consultant at EY</strong></li>
+              <li><strong>Google Certified Engineer</strong></li>
+              <li><strong>2x Microsoft Certified Analyst</strong></li>
+              <li><strong>Led Product Documentation at Vidi Corp, UK</strong></li>
+              <li><strong>BSc. First Class Honors Computer Science</strong></li>
+              <li><strong>2 Portfolio Enterprise Projects</strong></li>
+            </ul>
           </article>
           <article class="person">
             <div class="initials">OM</div>
             <h3>Osondu Michael</h3>
             <div class="role">Product Manager &amp; QA Specialist</div>
-            <p>
-              Leads product planning, acceptance criteria, QA coordination,
-              release readiness and alignment between client needs and delivery.
-            </p>
+            <ul class="person-credentials">
+              <li><strong>First-Class BSc in Software Engineering</strong></li>
+              <li><strong>Product Engineer &amp; Product Manager — 6+ Years Experience</strong></li>
+              <li><strong>Certified Ethical Hacker (CEH)</strong></li>
+              <li><strong>Web Applications, SaaS &amp; AI Automation Specialist</strong></li>
+              <li><strong>UI/UX, Conversion-Focused Web Design &amp; Product Strategy</strong></li>
+              <li><strong>Software Development, QA &amp; Technical Project Delivery</strong></li>
+              <li><strong>Enterprise Systems &amp; Multi-Cloud Software Experience</strong></li>
+            </ul>
           </article>
           <article class="person">
             <div class="initials">OD</div>
             <h3>Oki Daniel</h3>
             <div class="role">Product &amp; UI/UX Designer</div>
-            <p>
-              Designs user flows, responsive interfaces, the design system and
-              prototypes for both staff and admin experiences.
-            </p>
+            <ul class="person-credentials">
+              <li><strong>Staff-Level Product Designer &amp; UX Researcher — 4+ Years Experience</strong></li>
+              <li><strong>Product Designer / Design Engineer — Orba Health</strong></li>
+              <li><strong>FinTech, SaaS &amp; AI-Driven Product Experience</strong></li>
+              <li><strong>UX Research, Product Strategy &amp; Human-Centered Design</strong></li>
+              <li><strong>Cross-Functional Experience Across Design, Engineering, Data &amp; Business</strong></li>
+              <li><strong>Former Product Designer — circleHQ, Transition School &amp; Bloocode</strong></li>
+            </ul>
           </article>
           <article class="person">
             <div class="initials">SI</div>
             <h3>Shaffi Ibrahim</h3>
             <div class="role">Full-Stack Developer</div>
-            <p>
-              Builds frontend and backend workflows, APIs, database logic,
-              authentication, analytics, notifications and production
-              deployment.
-            </p>
+            <ul class="person-credentials">
+              <li><strong>Software Engineer &amp; Web Developer</strong></li>
+              <li><strong>Cybersecurity Professional in Training</strong></li>
+              <li><strong>EC-Council Certified</strong></li>
+              <li><strong>Software Engineering &amp; Cybersecurity Experience</strong></li>
+              <li><strong>Web Application Development &amp; Technical Problem-Solving</strong></li>
+              <li><strong>Cybersecurity Foundations, Threat Analysis &amp; Security Practices</strong></li>
+            </ul>
           </article>
           <article class="person">
-            <div class="initials">JO</div>
-            <h3>James Otaku</h3>
-            <div class="role">Senior Frontend Developer</div>
-            <p>
-              Leads frontend implementation, responsive application
-              architecture, interface performance and production-quality user
-              experiences.
-            </p>
-          </article>
-          <article class="person">
-            <div class="initials">PV</div>
-            <h3>Praise Victor</h3>
-            <div class="role">Senior Backend Developer</div>
-            <p>
-              Leads backend architecture, database services, APIs,
-              authentication, permissions and reliable server-side integrations.
-            </p>
+            <div class="initials">DO</div>
+            <h3>Daniel Olusesi</h3>
+            <div class="role">Backend, Analytics, &amp; DevOps Engineer</div>
+            <ul class="person-credentials">
+              <li><strong>3+ Years in Backend Engineering</strong></li>
+              <li><strong>Data Lead &amp; Specialist at AMDARI</strong></li>
+              <li><strong>Software &amp; Data Engineer at GOMYCODE</strong></li>
+              <li><strong>AWS Certified Cloud Practitioner</strong></li>
+            </ul>
           </article>
         </div>
       </div>
