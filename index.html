@@ -3955,6 +3955,27 @@
       #budget .commercial-table tbody td:last-child strong { color: var(--navy); font-size: 13px; }
       #budget .commercial-table tbody tr:hover { background: #f8fbfc; }
       #budget .commercial-table .hipaa-row { background: linear-gradient(90deg, rgba(100,196,193,.12), rgba(47,143,179,.05)); }
+      #budget .commercial-table .included-row {
+        background: linear-gradient(90deg, rgba(100,196,193,.10), rgba(237,247,251,.72));
+      }
+      #budget .commercial-table .included-row:hover {
+        background: linear-gradient(90deg, rgba(100,196,193,.15), rgba(237,247,251,.92));
+      }
+      #budget .commercial-table .included-row.first-included td {
+        border-top: 2px solid rgba(47,143,179,.22);
+      }
+      #budget .commercial-table .first-priced td {
+        border-top: 2px solid rgba(18,63,86,.16);
+      }
+      #budget .commercial-table .included-row td:last-child strong {
+        color: #168fea;
+        font-size: 13px;
+        font-weight: 900;
+      }
+      #budget .commercial-table .included-row .scope-tag {
+        background: rgba(22,143,234,.09);
+        color: #0d47c7;
+      }
       #budget .scope-tag {
         display: inline-flex;
         margin-top: 6px;
@@ -4033,8 +4054,8 @@
       }
       #budget .complimentary-services .third b { font-size: 13px; }
       #budget .complimentary-services .third > span:last-child { font-size: 12px; line-height: 1.45; }
-      #budget .usage-note { margin: 10px 16px 0; border-radius: 10px; background: rgba(255,255,255,.68); }
-      #budget .maintenance-card { margin: 12px 16px 0 !important; }
+      #budget .usage-note { margin: 10px 0 0; border-radius: 10px; background: rgba(255,255,255,.82); border: 1px solid rgba(10,10,10,.08); }
+      #budget .maintenance-card { margin: 14px 0 0 !important; }
 
       @media (max-width: 900px) {
         #budget .budget-hero { gap: 16px !important; padding: 22px !important; }
@@ -4753,8 +4774,8 @@
             <div class="commercial-head">
               <div>
                 <span class="commercial-kicker">Commercial breakdown</span>
-                <h3>15 priced workstreams behind the ₦20m build</h3>
-                <p>Each line represents a distinct delivery responsibility, with strategy, design, engineering, security and launch work separated so the investment is transparent.</p>
+                <h3>Breaking down the ₦20m investment</h3>
+                <p>We’ve separated the project into 15 priced workstreams plus 7 included services, so the paid scope and the no-fee launch support are clear in one place.</p>
               </div>
               <div class="commercial-total"><span>Priced scope</span><strong>₦20,000,000</strong></div>
             </div>
@@ -4764,21 +4785,28 @@
                   <tr><th>#</th><th>Workstream</th><th>What is delivered</th><th>Investment</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>01</td><td><b>Product discovery &amp; requirements architecture</b></td><td>Stakeholder discovery, current-process review, pain-point mapping, role identification, operating assumptions and priority definition.</td><td><strong>₦1,500,000</strong></td></tr>
-                  <tr><td>02</td><td><b>Product specification &amp; acceptance framework</b></td><td>Detailed product specification, user stories, acceptance criteria, screen inventory, feature dependencies and delivery-ready functional documentation.</td><td><strong>₦1,300,000</strong></td></tr>
-                  <tr><td>03</td><td><b>Information architecture, workflow &amp; data modelling</b></td><td>Staff/admin information architecture, workflow states, record relationships, permissions map, core data entities and system-state planning.</td><td><strong>₦1,200,000</strong></td></tr>
-                  <tr><td>04</td><td><b>Staff portal UX/UI design system</b></td><td>Mobile-first staff journeys, attendance flows, care documentation states, credential interactions, reusable components and responsive prototype.</td><td><strong>₦1,400,000</strong></td></tr>
-                  <tr><td>05</td><td><b>Admin control centre UX/UI</b></td><td>Desktop operations dashboard, staff oversight, client records, exceptions, compliance views, reporting states and responsive admin prototype.</td><td><strong>₦1,400,000</strong></td></tr>
-                  <tr><td>06</td><td><b>Staff application frontend engineering</b></td><td>Responsive staff experience, authentication states, attendance actions, forms, records, credential views, error states and production interactions.</td><td><strong>₦1,700,000</strong></td></tr>
-                  <tr><td>07</td><td><b>Admin portal frontend engineering</b></td><td>Operations dashboard, staff/client management interfaces, review queues, incident states, filters, reporting views and responsive implementation.</td><td><strong>₦1,700,000</strong></td></tr>
-                  <tr><td>08</td><td><b>Backend services, API layer &amp; business logic</b></td><td>Authentication services, authorization rules, core APIs, workflow logic, validations, service orchestration, exception handling and notification triggers.</td><td><strong>₦2,100,000</strong></td></tr>
-                  <tr><td>09</td><td><b>Database, records &amp; documentation workflows</b></td><td>Structured staff/client records, visit documentation, intake data, timesheet logic, file references, history tracking and record lifecycle handling.</td><td><strong>₦1,400,000</strong></td></tr>
-                  <tr><td>10</td><td><b>Attendance, GPS, OTP fallback &amp; exception engine</b></td><td>Location-assisted check-in/out, geocoding logic, supervisor verification, daily OTP backup, failed-location exceptions and attendance audit trail.</td><td><strong>₦1,300,000</strong></td></tr>
-                  <tr><td>11</td><td><b>Credential compliance &amp; notification automation</b></td><td>Credential expiry rules, reminder scheduling, operational alerts, exception notifications, transactional email events and escalation-ready workflows.</td><td><strong>₦800,000</strong></td></tr>
-                  <tr><td>12</td><td><b>Analytics, reporting &amp; audit trail</b></td><td>Operational KPIs, attendance summaries, staff/compliance trends, dashboard metrics, export-ready reporting data and traceable activity history.</td><td><strong>₦900,000</strong></td></tr>
-                  <tr class="hipaa-row"><td>13</td><td><b>HIPAA compliance controls &amp; security hardening</b><span class="scope-tag">Healthcare security</span></td><td>Least-privilege access, role-based controls, audit logging, secure sessions, encryption configuration, privacy safeguards, security review and audit-readiness documentation.</td><td><strong>₦1,300,000</strong></td></tr>
-                  <tr><td>14</td><td><b>QA, beta/UAT &amp; remediation cycle</b></td><td>Cross-device QA, workflow testing, permissions checks, regression testing, client beta/UAT support, issue documentation and priority remediation.</td><td><strong>₦1,000,000</strong></td></tr>
-                  <tr><td>15</td><td><b>Production deployment, training, documentation &amp; handoff</b></td><td>Production release, deployment configuration, domain connection, launch checklist, admin orientation, technical documentation and formal handoff.</td><td><strong>₦1,000,000</strong></td></tr>
+                  <tr class="included-row first-included"><td>01</td><td><b>12-month cloud hosting + database baseline</b><span class="scope-tag">Included at no fee</span></td><td>Production environment setup, database provisioning, backups and agreed baseline usage for the first 12 months after launch.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>02</td><td><b>GPS / maps / geocoding baseline</b><span class="scope-tag">Included at no fee</span></td><td>Provider configuration and agreed baseline usage required for attendance and location-verification workflows.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>03</td><td><b>Transactional email baseline</b><span class="scope-tag">Included at no fee</span></td><td>Provider setup and agreed baseline delivery for credential, exception, account and workflow notifications.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>04</td><td><b>Domain, DNS + SSL connection</b><span class="scope-tag">Included at no fee</span></td><td>Production domain connection, DNS configuration, HTTPS/SSL setup and launch routing configuration.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>05</td><td><b>Backups, monitoring + error logging</b><span class="scope-tag">Included at no fee</span></td><td>Baseline application monitoring, uptime visibility, error logging and scheduled backup configuration for launch operations.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>06</td><td><b>30-day launch hypercare</b><span class="scope-tag">Included at no fee</span></td><td>Priority post-launch triage for production issues, launch monitoring and minor release corrections during the first 30 days.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="included-row"><td>07</td><td><b>6-month post-launch support</b><span class="scope-tag">Included at no fee</span></td><td>Six months of post-launch support covering in-scope bug fixes, operational guidance, minor configuration adjustments and release support after go-live.</td><td><strong>Included · ₦0</strong></td></tr>
+                  <tr class="first-priced"><td>08</td><td><b>Product discovery &amp; requirements architecture</b></td><td>Stakeholder discovery, current-process review, pain-point mapping, role identification, operating assumptions and priority definition.</td><td><strong>₦1,500,000</strong></td></tr>
+                  <tr><td>09</td><td><b>Product specification &amp; acceptance framework</b></td><td>Detailed product specification, user stories, acceptance criteria, screen inventory, feature dependencies and delivery-ready functional documentation.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>10</td><td><b>Information architecture, workflow &amp; data modelling</b></td><td>Staff/admin information architecture, workflow states, record relationships, permissions map, core data entities and system-state planning.</td><td><strong>₦1,200,000</strong></td></tr>
+                  <tr><td>11</td><td><b>Staff portal UX/UI design system</b></td><td>Mobile-first staff journeys, attendance flows, care documentation states, credential interactions, reusable components and responsive prototype.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>12</td><td><b>Admin control centre UX/UI</b></td><td>Desktop operations dashboard, staff oversight, client records, exceptions, compliance views, reporting states and responsive admin prototype.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>13</td><td><b>Staff application frontend engineering</b></td><td>Responsive staff experience, authentication states, attendance actions, forms, records, credential views, error states and production interactions.</td><td><strong>₦1,700,000</strong></td></tr>
+                  <tr><td>14</td><td><b>Admin portal frontend engineering</b></td><td>Operations dashboard, staff/client management interfaces, review queues, incident states, filters, reporting views and responsive implementation.</td><td><strong>₦1,700,000</strong></td></tr>
+                  <tr><td>15</td><td><b>Backend services, API layer &amp; business logic</b></td><td>Authentication services, authorization rules, core APIs, workflow logic, validations, service orchestration, exception handling and notification triggers.</td><td><strong>₦2,100,000</strong></td></tr>
+                  <tr><td>16</td><td><b>Database, records &amp; documentation workflows</b></td><td>Structured staff/client records, visit documentation, intake data, timesheet logic, file references, history tracking and record lifecycle handling.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>17</td><td><b>Attendance, GPS, OTP fallback &amp; exception engine</b></td><td>Location-assisted check-in/out, geocoding logic, supervisor verification, daily OTP backup, failed-location exceptions and attendance audit trail.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>18</td><td><b>Credential compliance &amp; notification automation</b></td><td>Credential expiry rules, reminder scheduling, operational alerts, exception notifications, transactional email events and escalation-ready workflows.</td><td><strong>₦800,000</strong></td></tr>
+                  <tr><td>19</td><td><b>Analytics, reporting &amp; audit trail</b></td><td>Operational KPIs, attendance summaries, staff/compliance trends, dashboard metrics, export-ready reporting data and traceable activity history.</td><td><strong>₦900,000</strong></td></tr>
+                  <tr class="hipaa-row"><td>20</td><td><b>HIPAA compliance controls &amp; security hardening</b><span class="scope-tag">Healthcare security</span></td><td>Least-privilege access, role-based controls, audit logging, secure sessions, encryption configuration, privacy safeguards, security review and audit-readiness documentation.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>21</td><td><b>QA, beta/UAT &amp; remediation cycle</b></td><td>Cross-device QA, workflow testing, permissions checks, regression testing, client beta/UAT support, issue documentation and priority remediation.</td><td><strong>₦1,000,000</strong></td></tr>
+                  <tr><td>22</td><td><b>Production deployment, training, documentation &amp; handoff</b></td><td>Production release, deployment configuration, domain connection, launch checklist, admin orientation, technical documentation and formal handoff.</td><td><strong>₦1,000,000</strong></td></tr>
                 </tbody>
                 <tfoot><tr><td colspan="3"><b>Total project investment</b><span>15 priced delivery workstreams</span></td><td><strong>₦20,000,000</strong></td></tr></tfoot>
               </table>
@@ -4786,33 +4814,15 @@
             <p class="compliance-note"><b>HIPAA scope note:</b> the project includes HIPAA-aligned technical and operational safeguards within the application scope. Formal legal certification, external compliance attestation or third-party legal counsel is not represented as part of the software build.</p>
           </div>
 
-          <div class="third-party complimentary-services">
-            <div class="complimentary-head">
-              <div>
-                <span class="commercial-kicker">6 complimentary launch services</span>
-                <h3>Included at ₦0 additional project fee</h3>
-                <p>These launch enablers are bundled into the agreed project price rather than being presented as separate setup charges.</p>
-              </div>
-              <div class="free-badge"><strong>6</strong><span>included items</span></div>
-            </div>
-            <div class="third-grid included-services">
-              <div class="third"><span class="included-label">Included · ₦0</span><b>12-month cloud hosting + database baseline</b><span>Production environment setup, database provisioning, backups and agreed baseline usage for the first 12 months after launch.</span></div>
-              <div class="third"><span class="included-label">Included · ₦0</span><b>GPS / maps / geocoding baseline</b><span>Provider configuration and agreed baseline usage required for attendance and location-verification workflows.</span></div>
-              <div class="third"><span class="included-label">Included · ₦0</span><b>Transactional email baseline</b><span>Provider setup and agreed baseline delivery for credential, exception, account and workflow notifications.</span></div>
-              <div class="third"><span class="included-label">Included · ₦0</span><b>Domain, DNS + SSL connection</b><span>Production domain connection, DNS configuration, HTTPS/SSL setup and launch routing configuration.</span></div>
-              <div class="third"><span class="included-label">Included · ₦0</span><b>Backups, monitoring + error logging</b><span>Baseline application monitoring, uptime visibility, error logging and scheduled backup configuration for launch operations.</span></div>
-              <div class="third"><span class="included-label">Included · ₦0</span><b>30-day launch hypercare</b><span>Priority post-launch triage for production issues, launch monitoring and minor release corrections during the first 30 days.</span></div>
-            </div>
-            <p class="usage-note">Complimentary third-party services apply to the agreed baseline usage and configuration. Material usage overages, premium vendor plans or new services outside the approved scope require prior approval.</p>
+          <p class="usage-note"><b>Included-service usage note:</b> complimentary third-party services apply to the agreed baseline usage and configuration. Material usage overages, premium vendor plans or new services outside the approved scope require prior approval.</p>
 
-            <div class="maintenance-card">
-              <div>
-                <small>OPTIONAL ONGOING MAINTENANCE</small>
-                <h4>Available from 12 months after launch</h4>
-                <p>Optional from Month 13. Covers routine maintenance, security and dependency updates, backups, monitoring, bug fixes, performance checks and minor operational support. Major new features are quoted separately.</p>
-              </div>
-              <div class="maintenance-price"><strong>₦1,200,000</strong><span>per month · optional</span></div>
+          <div class="maintenance-card">
+            <div>
+              <small>OPTIONAL ONGOING MAINTENANCE</small>
+              <h4>Available from 12 months after launch</h4>
+              <p>Optional from Month 13. Covers routine maintenance, security and dependency updates, backups, monitoring, bug fixes, performance checks and minor operational support. Major new features are quoted separately.</p>
             </div>
+            <div class="maintenance-price"><strong>₦500,000</strong><span>per month · optional</span></div>
           </div>
         </div>
         </div>

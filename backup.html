@@ -3955,10 +3955,6 @@
       #budget .commercial-table tbody td:last-child strong { color: var(--navy); font-size: 13px; }
       #budget .commercial-table tbody tr:hover { background: #f8fbfc; }
       #budget .commercial-table .hipaa-row { background: linear-gradient(90deg, rgba(100,196,193,.12), rgba(47,143,179,.05)); }
-      #budget .commercial-table .free-row { background: linear-gradient(90deg, rgba(100,196,193,.10), rgba(237,247,251,.35)); }
-      #budget .commercial-table .free-row:hover { background: linear-gradient(90deg, rgba(100,196,193,.16), rgba(237,247,251,.55)); }
-      #budget .commercial-table .free-price { color: var(--blue) !important; }
-      #budget .commercial-table .free-tag { background: rgba(100,196,193,.18); color: var(--navy2); }
       #budget .scope-tag {
         display: inline-flex;
         margin-top: 6px;
@@ -4740,7 +4736,7 @@
               <small>Total project investment</small>
               <div class="price">₦20,000,000</div>
               <p>
-                The investment is distributed across 25 delivery workstreams so the commercial scope clearly reflects the depth of product strategy, experience design, frontend and backend engineering, healthcare security, compliance, testing and production-readiness required for Ataam’s operations platform.
+                The investment is distributed across 15 delivery workstreams so the commercial scope clearly reflects the depth of product strategy, engineering, compliance, testing and production-readiness required for a healthcare operations platform.
               </p>
             </div>
             <div class="pay">
@@ -4757,10 +4753,10 @@
             <div class="commercial-head">
               <div>
                 <span class="commercial-kicker">Commercial breakdown</span>
-                <h3>25 delivery workstreams behind the ₦20m build</h3>
-                <p>22 implementation workstreams carry the project investment, while the first three strategy and architecture workstreams are included at ₦0 to give Ataam a stronger delivery foundation before design and engineering begin.</p>
+                <h3>Breaking down the ₦20m investment</h3>
+                <p>We’ve separated the project into 15 workstreams to make the scope, responsibilities and investment clear.</p>
               </div>
-              <div class="commercial-total"><span>22 priced + 3 included</span><strong>₦20,000,000</strong></div>
+              <div class="commercial-total"><span>Priced scope</span><strong>₦20,000,000</strong></div>
             </div>
             <div class="commercial-table-wrap">
               <table class="commercial-table">
@@ -4768,33 +4764,23 @@
                   <tr><th>#</th><th>Workstream</th><th>What is delivered</th><th>Investment</th></tr>
                 </thead>
                 <tbody>
-                  <tr class="free-row"><td>01</td><td><b>Product discovery &amp; requirements architecture</b><span class="scope-tag free-tag">Included at no fee</span></td><td>Stakeholder discovery, current-process review, pain-point mapping, role identification, operating assumptions, delivery constraints, priority definition and project success criteria.</td><td><strong class="free-price">Included · ₦0</strong></td></tr>
-                  <tr class="free-row"><td>02</td><td><b>Product specification &amp; acceptance framework</b><span class="scope-tag free-tag">Included at no fee</span></td><td>Detailed product specification, user stories, acceptance criteria, screen inventory, feature dependencies, edge-case notes and delivery-ready functional documentation.</td><td><strong class="free-price">Included · ₦0</strong></td></tr>
-                  <tr class="free-row"><td>03</td><td><b>Information architecture, workflow &amp; data modelling</b><span class="scope-tag free-tag">Included at no fee</span></td><td>Staff/admin information architecture, workflow states, record relationships, permissions map, core data entities, system states, process dependencies and data-flow planning.</td><td><strong class="free-price">Included · ₦0</strong></td></tr>
-                  <tr><td>04</td><td><b>Staff portal UX/UI design</b></td><td>Mobile-first staff journeys, attendance flows, service documentation states, credential interactions, task states, empty/error states and high-fidelity responsive prototype.</td><td><strong>₦900,000</strong></td></tr>
-                  <tr><td>05</td><td><b>Admin operations portal UX/UI design</b></td><td>Desktop control-centre experience for staff oversight, client records, attendance review, credential status, exceptions, reporting, filters and operational decision-making.</td><td><strong>₦900,000</strong></td></tr>
-                  <tr><td>06</td><td><b>Responsive design system &amp; component library</b></td><td>Reusable interface components, form patterns, table states, status indicators, validation patterns, responsive rules and shared UI standards for both portals.</td><td><strong>₦600,000</strong></td></tr>
-                  <tr><td>07</td><td><b>Staff portal frontend engineering</b></td><td>Production implementation of staff authentication, check-in/out, records, forms, credential views, service documentation, loading/error states and mobile-responsive interactions.</td><td><strong>₦1,400,000</strong></td></tr>
-                  <tr><td>08</td><td><b>Admin control-centre frontend engineering</b></td><td>Production implementation of dashboards, staff/client management, attendance review, compliance views, exceptions, filters, reporting screens and desktop/tablet responsiveness.</td><td><strong>₦1,400,000</strong></td></tr>
-                  <tr><td>09</td><td><b>Authentication, session &amp; identity management</b></td><td>Secure account access, login/session handling, password flows, account-state management, protected routes, session expiry and identity-aware application states.</td><td><strong>₦800,000</strong></td></tr>
-                  <tr><td>10</td><td><b>Role-based access control &amp; permissions architecture</b></td><td>Permission matrix for staff, supervisors and administrators; least-privilege rules; protected actions; data visibility controls and role-sensitive workflow behaviour.</td><td><strong>₦700,000</strong></td></tr>
-                  <tr><td>11</td><td><b>Core backend services &amp; API architecture</b></td><td>Core application services, API endpoints, business rules, validation, service orchestration, error handling, workflow triggers and secure server-side processing.</td><td><strong>₦1,600,000</strong></td></tr>
-                  <tr><td>12</td><td><b>Database architecture &amp; record lifecycle management</b></td><td>Structured client/staff data models, relational records, status history, lifecycle rules, record integrity, timestamps, archival considerations and production database configuration.</td><td><strong>₦1,200,000</strong></td></tr>
-                  <tr><td>13</td><td><b>Client intake &amp; onboarding workflow</b></td><td>Digital intake capture, client profile creation, intake record organisation, required-field validation, operational handoff states and searchable client information.</td><td><strong>₦600,000</strong></td></tr>
-                  <tr><td>14</td><td><b>Staff records &amp; credential management</b></td><td>Staff profiles, employment/operational records, credential storage references, expiry dates, compliance status, review states and administrator visibility.</td><td><strong>₦600,000</strong></td></tr>
-                  <tr><td>15</td><td><b>Attendance, check-in/out &amp; timesheet workflow engine</b></td><td>Shift attendance actions, timestamp logic, timesheet records, check-in/out state handling, supervisor review points, attendance status and exception-ready workflow rules.</td><td><strong>₦700,000</strong></td></tr>
-                  <tr><td>16</td><td><b>GPS, maps, geofencing &amp; supervisor verification</b></td><td>Location-assisted attendance, geocoding integration, approved-location logic, distance checks, supervisor verification, location exceptions and traceable verification results.</td><td><strong>₦800,000</strong></td></tr>
-                  <tr><td>17</td><td><b>OTP fallback, failed-location exceptions &amp; manual override controls</b></td><td>Daily OTP backup when GPS is unavailable, failed-location handling, controlled supervisor override, reason capture, validation rules and exception audit history.</td><td><strong>₦500,000</strong></td></tr>
-                  <tr><td>18</td><td><b>Care/service documentation &amp; visit records workflow</b></td><td>Structured visit/service notes, documentation status, required fields, record history, staff-to-client association, completion tracking and operational review states.</td><td><strong>₦800,000</strong></td></tr>
-                  <tr><td>19</td><td><b>Credential expiry, reminders &amp; notification automation</b></td><td>Credential reminder rules, account alerts, attendance exceptions, workflow notifications, scheduled transactional email events and escalation-ready notification logic.</td><td><strong>₦500,000</strong></td></tr>
-                  <tr><td>20</td><td><b>Operational analytics dashboards &amp; reporting</b></td><td>Attendance summaries, staff activity, credential/compliance trends, client/service metrics, dashboard KPIs, report filters and export-ready reporting data.</td><td><strong>₦900,000</strong></td></tr>
-                  <tr><td>21</td><td><b>Audit trail, activity logging &amp; record traceability</b></td><td>Traceable user actions, important record changes, workflow timestamps, exception events, security-relevant activity and administrator-facing audit history.</td><td><strong>₦700,000</strong></td></tr>
-                  <tr class="hipaa-row"><td>22</td><td><b>HIPAA compliance controls &amp; security hardening</b><span class="scope-tag">Healthcare security</span></td><td>HIPAA-aligned technical safeguards including least-privilege access, privacy-aware permission patterns, secure sessions, audit logging, encryption configuration, sensitive-data handling, security review and audit-readiness documentation within the application scope.</td><td><strong>₦1,700,000</strong></td></tr>
-                  <tr><td>23</td><td><b>QA, regression &amp; cross-device testing</b></td><td>Functional QA, responsive/device testing, workflow validation, permission testing, negative/edge-case testing, regression passes, defect documentation and release-quality verification.</td><td><strong>₦800,000</strong></td></tr>
-                  <tr><td>24</td><td><b>Client beta/UAT, remediation &amp; production readiness</b></td><td>Guided client beta testing, UAT support, issue triage, urgent feedback implementation, retesting, release checklist and final production-readiness validation.</td><td><strong>₦700,000</strong></td></tr>
-                  <tr><td>25</td><td><b>Deployment, training, documentation &amp; formal handoff</b></td><td>Production release, hosting configuration, domain connection, launch verification, administrator orientation, technical/user documentation, handoff pack and official go-live support.</td><td><strong>₦1,200,000</strong></td></tr>
+                  <tr><td>01</td><td><b>Product discovery &amp; requirements architecture</b></td><td>Stakeholder discovery, current-process review, pain-point mapping, role identification, operating assumptions and priority definition.</td><td><strong>₦1,500,000</strong></td></tr>
+                  <tr><td>02</td><td><b>Product specification &amp; acceptance framework</b></td><td>Detailed product specification, user stories, acceptance criteria, screen inventory, feature dependencies and delivery-ready functional documentation.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>03</td><td><b>Information architecture, workflow &amp; data modelling</b></td><td>Staff/admin information architecture, workflow states, record relationships, permissions map, core data entities and system-state planning.</td><td><strong>₦1,200,000</strong></td></tr>
+                  <tr><td>04</td><td><b>Staff portal UX/UI design system</b></td><td>Mobile-first staff journeys, attendance flows, care documentation states, credential interactions, reusable components and responsive prototype.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>05</td><td><b>Admin control centre UX/UI</b></td><td>Desktop operations dashboard, staff oversight, client records, exceptions, compliance views, reporting states and responsive admin prototype.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>06</td><td><b>Staff application frontend engineering</b></td><td>Responsive staff experience, authentication states, attendance actions, forms, records, credential views, error states and production interactions.</td><td><strong>₦1,700,000</strong></td></tr>
+                  <tr><td>07</td><td><b>Admin portal frontend engineering</b></td><td>Operations dashboard, staff/client management interfaces, review queues, incident states, filters, reporting views and responsive implementation.</td><td><strong>₦1,700,000</strong></td></tr>
+                  <tr><td>08</td><td><b>Backend services, API layer &amp; business logic</b></td><td>Authentication services, authorization rules, core APIs, workflow logic, validations, service orchestration, exception handling and notification triggers.</td><td><strong>₦2,100,000</strong></td></tr>
+                  <tr><td>09</td><td><b>Database, records &amp; documentation workflows</b></td><td>Structured staff/client records, visit documentation, intake data, timesheet logic, file references, history tracking and record lifecycle handling.</td><td><strong>₦1,400,000</strong></td></tr>
+                  <tr><td>10</td><td><b>Attendance, GPS, OTP fallback &amp; exception engine</b></td><td>Location-assisted check-in/out, geocoding logic, supervisor verification, daily OTP backup, failed-location exceptions and attendance audit trail.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>11</td><td><b>Credential compliance &amp; notification automation</b></td><td>Credential expiry rules, reminder scheduling, operational alerts, exception notifications, transactional email events and escalation-ready workflows.</td><td><strong>₦800,000</strong></td></tr>
+                  <tr><td>12</td><td><b>Analytics, reporting &amp; audit trail</b></td><td>Operational KPIs, attendance summaries, staff/compliance trends, dashboard metrics, export-ready reporting data and traceable activity history.</td><td><strong>₦900,000</strong></td></tr>
+                  <tr class="hipaa-row"><td>13</td><td><b>HIPAA compliance controls &amp; security hardening</b><span class="scope-tag">Healthcare security</span></td><td>Least-privilege access, role-based controls, audit logging, secure sessions, encryption configuration, privacy safeguards, security review and audit-readiness documentation.</td><td><strong>₦1,300,000</strong></td></tr>
+                  <tr><td>14</td><td><b>QA, beta/UAT &amp; remediation cycle</b></td><td>Cross-device QA, workflow testing, permissions checks, regression testing, client beta/UAT support, issue documentation and priority remediation.</td><td><strong>₦1,000,000</strong></td></tr>
+                  <tr><td>15</td><td><b>Production deployment, training, documentation &amp; handoff</b></td><td>Production release, deployment configuration, domain connection, launch checklist, admin orientation, technical documentation and formal handoff.</td><td><strong>₦1,000,000</strong></td></tr>
                 </tbody>
-                <tfoot><tr><td colspan="3"><b>Total project investment</b><span>25 workstreams · 22 priced + 3 included at ₦0</span></td><td><strong>₦20,000,000</strong></td></tr></tfoot>
+                <tfoot><tr><td colspan="3"><b>Total project investment</b><span>15 priced delivery workstreams</span></td><td><strong>₦20,000,000</strong></td></tr></tfoot>
               </table>
             </div>
             <p class="compliance-note"><b>HIPAA scope note:</b> the project includes HIPAA-aligned technical and operational safeguards within the application scope. Formal legal certification, external compliance attestation or third-party legal counsel is not represented as part of the software build.</p>
