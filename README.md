@@ -18,15 +18,17 @@ A normal HTML/JavaScript site cannot securely hide a CSV or password if the brow
 
 This project therefore uses a Netlify Function + Netlify Blobs. The frontend calls `/api/vault`; the function reads/writes the private CSV in backend storage and creates an HttpOnly session cookie after a correct password.
 
+Never commit real environment variable values, passwords, API tokens, or session secrets to this repository.
+
 ## Deploy on Netlify
 
 1. Push this folder to a GitHub repository.
 2. Import the repository into Netlify.
 3. In **Netlify → Site configuration → Environment variables**, add:
-   - `INITIAL_VAULT_PASSWORD` = `#ferrn2004`
-   - `SESSION_SECRET` = a long random value (at least 32 characters).
+   - `INITIAL_VAULT_PASSWORD` = a strong private password that is not committed to GitHub.
+   - `SESSION_SECRET` = a long random secret (at least 32 characters).
 4. Deploy.
-5. Open the site and sign in with `#ferrn2004`.
+5. Open the site and sign in with the private password configured in `INITIAL_VAULT_PASSWORD`.
 6. Go to **Manage** to add all website/proposal links and optionally cover-image URLs.
 7. Use the **Access password** panel on `admin.html` whenever you want to change the password.
 
@@ -44,8 +46,8 @@ npm install -g netlify-cli
 Create a local `.env` file (already ignored by Git):
 
 ```env
-INITIAL_VAULT_PASSWORD=#ferrn2004
-SESSION_SECRET=replace-this-with-a-long-random-secret
+INITIAL_VAULT_PASSWORD="replace-with-a-private-password"
+SESSION_SECRET="replace-with-a-long-random-secret"
 ```
 
 Then run:
