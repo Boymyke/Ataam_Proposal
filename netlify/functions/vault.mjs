@@ -1,4 +1,4 @@
-import { getStore } from "@netlify/blobs";
+import { connectLambda, getStore } from "@netlify/blobs";
 import crypto from "node:crypto";
 
 const CSV_KEY = "vault.csv";
@@ -228,34 +228,8 @@ function cookie(token, maxAge = SESSION_TTL_SECONDS) {
   ].join("; ");
 }
 
-/*
-|--------------------------------------------------------------------------
-| NETLIFY BLOBS STORE
-|--------------------------------------------------------------------------
-|
-| This is the important part.
-|
-| Your local Netlify environment was not automatically providing the
-| Netlify Blobs configuration, so we provide siteID + token manually.
-|
-*/
-
 function getVaultStore() {
-  const siteID = process.env.NETLIFY_SITE_ID;
-  const token = process.env.NETLIFY_AUTH_TOKEN;
-
-  if (!siteID) {
-    throw new Error("NETLIFY_SITE_ID is not configured.");
-  }
-
-  if (!token) {
-    throw new Error("NETLIFY_AUTH_TOKEN is not configured.");
-  }
-
-  return getStore(STORE_NAME, {
-    siteID,
-    token,
-  });
+  return getStore(STORE_NAME);
 }
 
 async function getRows() {
@@ -394,6 +368,8 @@ function sanitizeItem(raw) {
 
 export const handler = async (event) => {
   try {
+    connectLambda(event);
+
     const op = event.queryStringParameters?.op || "";
 
     const rows = await getRows();
