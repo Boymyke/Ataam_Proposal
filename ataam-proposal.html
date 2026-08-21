@@ -4201,61 +4201,9 @@
       #work .section-intro {
         margin-bottom: 24px;
       }
-      #work .credentials {
-        align-items: stretch;
-      }
       #work .cred {
         background: var(--navy2);
         box-shadow: 0 10px 30px rgba(13, 71, 199, 0.06);
-        padding: 0;
-        overflow: hidden;
-        min-width: 0;
-      }
-      #work .project-image {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient(135deg, #061b42, #0d47c7);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      #work .project-image img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: top center;
-        transition: transform 0.35s ease;
-      }
-      #work .cred:hover .project-image img {
-        transform: scale(1.025);
-      }
-      #work .project-image.missing {
-        display: grid;
-        place-items: center;
-      }
-      #work .project-image.missing::after {
-        content: attr(data-fallback);
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 14px;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-align: center;
-        padding: 18px;
-      }
-      #work .project-copy {
-        width: 100%;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 16px 18px 18px;
-      }
-      #work .project-copy b {
-        margin-bottom: 7px;
-      }
-      #work .project-copy p {
-        margin: 0;
       }
       #work .project-link-btn {
         color: #168fea !important;
@@ -4284,51 +4232,34 @@
       #work .email-contact strong {
         display: block;
       }
-      @media (max-width: 980px) {
-        #work .credentials {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-      @media (max-width: 640px) {
-        #work .credentials {
-          grid-template-columns: 1fr;
-        }
-      }
       @media print {
         #work .title {
           font-size: 28pt !important;
         }
         #work .section-intro {
-          margin-bottom: 10px !important;
+          margin-bottom: 12px !important;
         }
         #work .credentials {
-          grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-          gap: 4px !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 7px !important;
         }
         #work .cred {
-          padding: 0 !important;
-        }
-        #work .project-image {
-          aspect-ratio: 16 / 9 !important;
-        }
-        #work .project-copy {
-          padding: 7px !important;
+          padding: 11px !important;
         }
         #work .cred b {
-          font-size: 10px !important;
-          margin-bottom: 3px !important;
+          font-size: 12px !important;
         }
         #work .cred p {
-          font-size: 7.5px !important;
-          line-height: 1.24 !important;
+          font-size: 9px !important;
+          line-height: 1.3 !important;
         }
         #work .project-link-btn {
-          font-size: 8px !important;
-          padding-top: 4px !important;
+          font-size: 9px !important;
+          padding-top: 5px !important;
         }
         #work .ferrn-contact-card {
-          margin-top: 7px !important;
-          padding: 8px 10px !important;
+          margin-top: 9px !important;
+          padding: 9px 11px !important;
         }
       }
     </style>
@@ -5104,7 +5035,7 @@
               >
             </div>
             <div class="close-actions">
-              <a class="approve" href="form.html"
+              <a class="approve" href="ataam-form.html"
                 >Approve proposal &amp; proceed
                 <svg
                   aria-hidden="true"
@@ -5243,131 +5174,53 @@
             </h2>
           </div>
           <p class="lead">
-            Selected work that demonstrates the same capabilities Ataam needs:
-            multi-role platforms, structured workflows, operational clarity,
-            trusted digital experiences and systems designed to scale.
+            Selected product and digital experience work that demonstrates our
+            ability to design and deliver complex platforms, structured workflows
+            and enterprise-facing experiences.
           </p>
         </div>
         <div class="credentials">
           <div class="cred">
-            <div class="project-image" data-fallback="Acad AI">
-              <img
-                alt="Acad AI student dashboard interface"
-                src="images/acadai.webp"
-                onerror="this.parentElement.classList.add('missing'); this.remove()"
-              />
-            </div>
-            <div class="project-copy">
-              <b>Acad AI</b>
-              <p>
-                Role-based application experience spanning student, educator and
-                institution workflows, directly relevant to Ataam's staff/admin
-                split, permissions, dashboards and day-to-day operational visibility.
-              </p>
-              <a
-                class="project-link-btn"
-                href="https://www.acadai.co/"
-                rel="noopener"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
+            <b>Acad AI</b>
+            <p>
+              Multi-role application delivery spanning institution, educator and
+              student workflows, with workflow automation and application UX.
+            </p>
+            <a
+              class="project-link-btn"
+              href="https://www.acadai.co/"
+              rel="noopener"
+              target="_blank"
+              >View Project</a
+            >
           </div>
           <div class="cred">
-            <div class="project-image" data-fallback="Partners West Africa Nigeria">
-              <img
-                alt="Partners West Africa Nigeria AI information platform"
-                src="images/pwan.webp"
-                onerror="this.parentElement.classList.add('missing'); this.remove()"
-              />
-            </div>
-            <div class="project-copy">
-              <b>Partners West Africa Nigeria</b>
-              <p>
-                AI-enabled information experience designed around trusted content,
-                accessible journeys and structured responses, relevant to Ataam's
-                need for clear, dependable workflows around sensitive information.
-              </p>
-              <a
-                class="project-link-btn"
-                href="https://www.partnersnigeria.org/"
-                rel="noopener"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
+            <b>Partners West Africa Nigeria</b>
+            <p>
+              AI application work focused on accessible information delivery,
+              public-interest UX and structured digital workflows.
+            </p>
+            <a
+              class="project-link-btn"
+              href="https://www.partnersnigeria.org/"
+              rel="noopener"
+              target="_blank"
+              >View Project</a
+            >
           </div>
           <div class="cred">
-            <div class="project-image" data-fallback="M-P Infrastructure">
-              <img
-                alt="M-P Infrastructure enterprise website"
-                src="images/mpi.webp"
-                onerror="this.parentElement.classList.add('missing'); this.remove()"
-              />
-            </div>
-            <div class="project-copy">
-              <b>M-P Infrastructure</b>
-              <p>
-                Enterprise digital experience that turns complex services, projects
-                and proof into a clear decision-making journey, relevant to how
-                Ataam needs dense operational information surfaced for leadership.
-              </p>
-              <a
-                class="project-link-btn"
-                href="https://www.mpiafrica.com/"
-                rel="noopener"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="cred">
-            <div class="project-image" data-fallback="Synergix Africa">
-              <img
-                alt="Synergix Africa entrepreneurship platform"
-                src="images/synergix.webp"
-                onerror="this.parentElement.classList.add('missing'); this.remove()"
-              />
-            </div>
-            <div class="project-copy">
-              <b>Synergix Africa</b>
-              <p>
-                Entrepreneurship platform built to organise programs, growth tools
-                and community pathways for a large business audience, demonstrating
-                scalable information architecture and guided multi-user journeys.
-              </p>
-              <a
-                class="project-link-btn"
-                href="https://synergixafrica.com/"
-                rel="noopener"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="cred">
-            <div class="project-image" data-fallback="Aroda Group">
-              <img
-                alt="Aroda Group digital infrastructure website"
-                src="images/aroda.webp"
-                onerror="this.parentElement.classList.add('missing'); this.remove()"
-              />
-            </div>
-            <div class="project-copy">
-              <b>Aroda Group</b>
-              <p>
-                Digital infrastructure website connecting tools, commerce and
-                operational services in one ecosystem, closely aligned with Ataam's
-                goal of replacing fragmented processes with one connected platform.
-              </p>
-              <a
-                class="project-link-btn"
-                href="https://www.arodagroup.com/"
-                rel="noopener"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
+            <b>M-P Infrastructure</b>
+            <p>
+              Enterprise digital experience built to organise complex services,
+              projects and proof for decision-makers.
+            </p>
+            <a
+              class="project-link-btn"
+              href="https://www.mpiafrica.com/"
+              rel="noopener"
+              target="_blank"
+              >View Project</a
+            >
           </div>
         </div>
         <div class="ferrn-contact-card">
